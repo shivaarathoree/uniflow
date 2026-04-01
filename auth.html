@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - UNIFLOW</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fffdf7;
+            color: #18181b;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+        .brutal-shadow { box-shadow: 4px 4px 0px 0px #000000; }
+        .brutal-shadow-sm { box-shadow: 2px 2px 0px 0px #000000; }
+        .brutal-shadow-lg { box-shadow: 8px 8px 0px 0px #000000; }
+        .brutal-hover:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px #000000; }
+        .brutal-hover-lift:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px 0px #000000; }
+        .bg-grid-pattern {
+            background-image: linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px);
+            background-size: 40px 40px; background-position: center center; opacity: 0.03;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-yellow-200 selection:text-black">
+
+    <!-- Simple Nav -->
+    <nav class="fixed w-full z-50 top-0 border-b-2 border-black bg-[#fffdf7]/95 backdrop-blur-sm">
+        <div class="flex h-20 max-w-7xl mx-auto px-6 items-center justify-between">
+            <a href="design.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-[#86efac] rounded-lg border-2 border-black flex items-center justify-center brutal-shadow-sm group-hover:rotate-6 transition-transform">
+                    <i data-lucide="activity" class="w-6 h-6 stroke-[1.5]"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">UNIFLOW</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="absolute inset-0 bg-grid-pattern -z-20 pointer-events-none mt-20"></div>
+
+    <section class="min-h-screen pt-32 pb-20 px-6 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-[#ff9ebb] rounded-full filter blur-3xl opacity-50 mix-blend-multiply"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-[#86efac] rounded-full filter blur-3xl opacity-50 mix-blend-multiply"></div>
+
+        <div class="w-full max-w-md relative z-10">
+            <div class="bg-white border-2 border-black p-8 rounded-2xl brutal-shadow-lg">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold mb-2">Welcome Back</h1>
+                    <p class="text-zinc-600 font-medium">Continue your streak today.</p>
+                </div>
+
+                <div class="flex gap-4 mb-8">
+                    <button class="flex-1 py-3 px-4 border-2 border-black rounded-xl font-bold brutal-shadow flex items-center justify-center gap-2 bg-white hover:-translate-y-1 transition-transform">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google">
+                        Google
+                    </button>
+                    <button class="flex-1 py-3 px-4 border-2 border-black rounded-xl font-bold brutal-shadow flex items-center justify-center gap-2 bg-white hover:-translate-y-1 transition-transform">
+                        <i data-lucide="github" class="w-5 h-5 text-black"></i>
+                        GitHub
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-0.5 flex-1 bg-black"></div>
+                    <span class="text-sm font-bold uppercase text-zinc-500">OR</span>
+                    <div class="h-0.5 flex-1 bg-black"></div>
+                </div>
+
+                <form action="dashboard.html" method="GET" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Email Address</label>
+                        <input type="email" placeholder="you@example.com" class="w-full px-4 py-3 border-2 border-black rounded-xl focus:outline-none focus:ring-4 focus:ring-yellow-200 transition-shadow font-medium" required>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <label class="block text-sm font-bold">Password</label>
+                            <a href="#" class="text-xs font-bold text-blue-600 hover:underline">Forgot?</a>
+                        </div>
+                        <input type="password" placeholder="••••••••" class="w-full px-4 py-3 border-2 border-black rounded-xl focus:outline-none focus:ring-4 focus:ring-yellow-200 transition-shadow font-medium" required>
+                    </div>
+
+                    <button type="submit" class="w-full bg-[#fde047] text-black py-4 rounded-xl font-bold text-lg border-2 border-black brutal-shadow brutal-hover transition-all mt-4">
+                        Jump In
+                    </button>
+                </form>
+
+                <p class="text-center mt-6 text-sm font-medium">
+                    New here? <a href="#" class="font-bold underline text-blue-600">Start Tracking Free</a>
+                </p>
+            </div>
+            
+            <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-blue-300 rounded-full border-2 border-black -z-10"></div>
+            <div class="absolute -top-6 -left-6 w-16 h-16 bg-yellow-300 rounded-xl border-2 border-black rotate-12 -z-10"></div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

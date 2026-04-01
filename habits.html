@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Habits - UNIFLOW</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fffdf7; color: #18181b; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+        .brutal-shadow { box-shadow: 4px 4px 0px 0px #000000; }
+        .brutal-shadow-sm { box-shadow: 2px 2px 0px 0px #000000; }
+        .brutal-hover:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px #000000; cursor: pointer; }
+    </style>
+</head>
+<body class="antialiased selection:bg-yellow-200 selection:text-black flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 border-r-2 border-black bg-white flex flex-col justify-between hidden md:block shrink-0">
+        <div>
+            <div class="h-20 border-b-2 border-black flex items-center px-6">
+                <a href="design.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-[#86efac] rounded border-2 border-black flex items-center justify-center brutal-shadow-sm">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">UNIFLOW</span>
+                </a>
+            </div>
+            <nav class="p-4 flex flex-col gap-2">
+                <a href="dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-xl border-2 border-transparent hover:border-black font-semibold text-zinc-600 hover:text-black hover:bg-zinc-50 transition-colors">
+                    <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Dashboard
+                </a>
+                <a href="habits.html" class="flex items-center gap-3 px-4 py-3 bg-[#fde047] rounded-xl border-2 border-black brutal-shadow-sm font-bold text-black">
+                    <i data-lucide="list-todo" class="w-5 h-5"></i> All Habits
+                </a>
+                <a href="coach.html" class="flex items-center gap-3 px-4 py-3 rounded-xl border-2 border-transparent hover:border-black font-semibold text-zinc-600 hover:text-black hover:bg-zinc-50 transition-colors">
+                    <i data-lucide="bot" class="w-5 h-5 text-indigo-500"></i> AI Coach
+                </a>
+                <a href="analytics.html" class="flex items-center gap-3 px-4 py-3 rounded-xl border-2 border-transparent hover:border-black font-semibold text-zinc-600 hover:text-black hover:bg-zinc-50 transition-colors">
+                    <i data-lucide="pie-chart" class="w-5 h-5"></i> Analytics
+                </a>
+            </nav>
+        </div>
+        
+        <div class="p-4 border-t-2 border-black">
+            <a href="settings.html" class="flex items-center gap-3 px-4 py-3 rounded-xl border-2 border-transparent hover:border-black font-semibold text-zinc-600 hover:text-black hover:bg-zinc-50 transition-colors">
+                <i data-lucide="settings" class="w-5 h-5"></i> Settings
+            </a>
+            <div class="mt-4 flex items-center gap-3 px-4">
+                <div class="w-10 h-10 rounded-full border-2 border-black bg-gradient-to-br from-pink-300 to-purple-400"></div>
+                <div>
+                    <div class="text-sm font-bold">Gaurav</div>
+                    <div class="text-xs text-zinc-500 font-medium cursor-pointer hover:underline">Log out</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-screen overflow-hidden bg-[#fffdf7]">
+        <!-- Mobile Topbar -->
+        <header class="h-20 border-b-2 border-black px-6 flex items-center justify-between md:hidden bg-white shrink-0">
+            <a href="design.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-[#86efac] rounded border-2 border-black flex items-center justify-center">
+                    <i data-lucide="activity" class="w-5 h-5"></i>
+                </div>
+            </a>
+            <button class="w-10 h-10 bg-white border-2 border-black rounded flex items-center justify-center brutal-shadow-sm">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </header>
+
+        <!-- Dynamic Area -->
+        <div class="flex-1 overflow-y-auto p-6 md:p-10 max-w-5xl mx-auto w-full">
+            <div class="flex flex-col md:flex-row gap-4 mb-10 items-end justify-between">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-medium mb-3">Manage Habits</h1>
+                    <p class="text-zinc-500 font-medium text-lg">Build the ultimate routine.</p>
+                </div>
+                <button class="bg-black text-white px-6 py-3 rounded-xl border-2 border-black brutal-shadow brutal-hover flex items-center gap-3 font-bold transition-transform">
+                    <i data-lucide="plus" class="w-5 h-5"></i> Create New Habit
+                </button>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Group: Morning Routine -->
+                <section>
+                    <div class="inline-flex items-center gap-2 bg-[#ff9ebb] border-2 border-black px-4 py-2 rounded-lg brutal-shadow-sm mb-6 font-bold uppercase tracking-widest text-sm">
+                        <i data-lucide="sunrise" class="w-5 h-5"></i> Morning Routine
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Habit Card 1 -->
+                        <div class="bg-white border-2 border-black p-5 rounded-2xl brutal-shadow-sm group relative">
+                            <div class="absolute -top-3 -right-3 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center border-2 border-white brutal-shadow-sm cursor-pointer hover:scale-110 transition-transform">
+                                <i data-lucide="edit-2" class="w-4 h-4"></i>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-100 border-2 border-black rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="droplets" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">Drink Water</h3>
+                            <p class="text-zinc-500 text-sm font-semibold mb-4">Daily • 2 Liters</p>
+                            <div class="flex items-center justify-between border-t-2 border-dashed border-zinc-200 pt-4">
+                                <span class="text-sm font-bold text-zinc-400">32 Day Streak</span>
+                                <div class="bg-[#86efac] px-2 py-1 border-2 border-black rounded text-xs font-bold shadow-[2px_2px_0px_#000]">Active</div>
+                            </div>
+                        </div>
+
+                        <!-- Habit Card 2 -->
+                        <div class="bg-white border-2 border-black p-5 rounded-2xl brutal-shadow-sm group relative">
+                            <div class="absolute -top-3 -right-3 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center border-2 border-white brutal-shadow-sm cursor-pointer hover:scale-110 transition-transform">
+                                <i data-lucide="edit-2" class="w-4 h-4"></i>
+                            </div>
+                            <div class="w-12 h-12 bg-yellow-100 border-2 border-black rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="book" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">Morning Journal</h3>
+                            <p class="text-zinc-500 text-sm font-semibold mb-4">Daily • 15 Mins</p>
+                            <div class="flex items-center justify-between border-t-2 border-dashed border-zinc-200 pt-4">
+                                <span class="text-sm font-bold text-zinc-400">12 Day Streak</span>
+                                <div class="bg-[#86efac] px-2 py-1 border-2 border-black rounded text-xs font-bold shadow-[2px_2px_0px_#000]">Active</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Group: Do Or Die (High Stakes) -->
+                <section>
+                    <div class="inline-flex items-center gap-2 bg-red-400 text-white border-2 border-black px-4 py-2 rounded-lg brutal-shadow-sm mb-6 font-bold uppercase tracking-widest text-sm relative -rotate-1">
+                        <i data-lucide="flame" class="w-5 h-5"></i> High Stakes
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Stake Habit -->
+                        <div class="bg-[#18181b] text-white border-2 border-black p-5 rounded-2xl brutal-shadow-sm group relative transform rotate-1">
+                            <div class="absolute -top-3 -right-3 w-8 h-8 bg-white text-black rounded-full flex items-center justify-center border-2 border-black brutal-shadow-sm cursor-pointer hover:scale-110 transition-transform">
+                                <i data-lucide="edit-2" class="w-4 h-4"></i>
+                            </div>
+                            <div class="w-12 h-12 bg-orange-500 border-2 border-black text-black rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="dumbbell" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">Gym Session</h3>
+                            <p class="text-zinc-400 text-sm font-semibold mb-4">4x Week • Penalty: ₹500 to friend</p>
+                            <div class="flex items-center justify-between border-t border-dashed border-zinc-700 pt-4">
+                                <span class="text-sm font-bold text-zinc-300">3 Day Streak</span>
+                                <div class="bg-red-500 text-white px-2 py-1 border-2 border-black rounded text-xs font-bold shadow-[2px_2px_0px_#000]">Staked</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Group: Learning / Evening -->
+                <section>
+                    <div class="inline-flex items-center gap-2 bg-[#bfdbfe] border-2 border-black px-4 py-2 rounded-lg brutal-shadow-sm mb-6 font-bold uppercase tracking-widest text-sm">
+                        <i data-lucide="moon" class="w-5 h-5"></i> Evening Unwind
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-white border-2 border-black p-5 rounded-2xl brutal-shadow-sm group relative">
+                            <div class="absolute -top-3 -right-3 w-8 h-8 bg-black text-white rounded-full flex items-center justify-center border-2 border-white brutal-shadow-sm cursor-pointer hover:scale-110 transition-transform">
+                                <i data-lucide="edit-2" class="w-4 h-4"></i>
+                            </div>
+                            <div class="w-12 h-12 bg-purple-100 border-2 border-black rounded-xl flex items-center justify-center mb-4">
+                                <i data-lucide="book-open" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">Deep Work Reading</h3>
+                            <p class="text-zinc-500 text-sm font-semibold mb-4">Daily • 30 Mins</p>
+                            <div class="flex items-center justify-between border-t-2 border-dashed border-zinc-200 pt-4">
+                                <span class="text-sm font-bold text-zinc-400">4 Day Streak</span>
+                                <div class="bg-[#86efac] px-2 py-1 border-2 border-black rounded text-xs font-bold shadow-[2px_2px_0px_#000]">Active</div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-4 border-dashed border-black/20 p-5 rounded-2xl flex flex-col items-center justify-center gap-3 hover:border-black/50 hover:bg-black/5 transition-all outline-none cursor-pointer group">
+                           <div class="w-12 h-12 bg-black/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                               <i data-lucide="plus" class="w-6 h-6 text-black/50"></i>
+                           </div>
+                           <span class="font-bold text-black/50">Add Night Routine</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
